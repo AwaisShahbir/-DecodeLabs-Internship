@@ -2,9 +2,6 @@
 
 A premium, modern, and highly interactive static web dashboard designed for software engineering interns to track their sprint deliverables, monitor task progress, and submit project links for qualification verification.
 
-## 🚀 Live Demo
-You can view the live project here: [Live Link (Add your deployed link here)]
-
 ---
 
 ## 💎 Features
