@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DecodeLabs Industrial Training Portal. Track your frontend developer internship progress, complete Sprints, submit code repositories, and verify your qualification status.">
+    <title>DecodeLabs | Intern Progress Portal & Sprint Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    
+    <header class="app-header">
+        <div class="header-container">
+            <a href="#" class="logo-link">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <span class="logo-text">Decode<span class="highlight">Labs</span></span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+                <a href="#sprints" class="nav-item"><i class="fa-solid fa-list-check"></i> Sprints</a>
+                <a href="#submit" class="nav-item"><i class="fa-solid fa-cloud-arrow-up"></i> Submit Task</a>
+            </nav>
+
+            <div class="profile-badge" id="profileBadge">
+                <div class="avatar">
+                    <span class="avatar-text">IN</span>
+                    <span class="status-indicator"></span>
+                </div>
+                <div class="profile-info">
+                    <span class="profile-name">Batch 2026 Intern</span>
+                    <span class="profile-role">Frontend Developer</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="app-main">
+        <div class="main-container">
+            
+            
+            <section class="hero-section" id="dashboard">
+                <div class="hero-content">
+                    <div class="badge-row">
+                        <span class="glowing-badge"><i class="fa-solid fa-graduation-cap"></i> Industrial Training Kit</span>
+                        <span class="cohort-badge">Cohort: Batch 2026</span>
+                    </div>
+                    <h1 class="hero-title">Step Into the Future of <span class="gradient-text">Software Engineering</span></h1>
+                    <p class="hero-subtitle">Track your weekly development milestones, qualify for upcoming training phases, and submit your industry-grade projects in real time.</p>
+                </div>
+
+                
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <div class="stat-icon icon-violet">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-label">Active Sprint</span>
+                            <span class="stat-value">Sprint 1</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-cyan">
+                            <i class="fa-solid fa-bars-progress"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-label">Webpage Progress</span>
+                            <span class="stat-value" id="completionVal">0%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon icon-pink">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-label">Verification Status</span>
+                            <span class="stat-value text-accent" id="verificationVal">Pending submission</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <div class="dashboard-grid">
+                
+                
+                <section class="card glass-card workboard-card">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-subtitle">Active Sprint Milestone</span>
+                            <h2 class="card-title">Project 1: Static Webpage Construction</h2>
+                        </div>
+                        <span class="sprint-status-tag tag-active">In Progress</span>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="project-desc">Create a modern, clean, and highly aesthetic static landing webpage using standard HTML5 structures and Vanilla CSS3 stylesheets. Maintain structured semantics and absolute responsiveness.</p>
+                        
+                        
+                        <div class="task-checklist">
+                            <h3 class="section-subtitle"><i class="fa-solid fa-list-ul"></i> Required Deliverables</h3>
+                            
+                            <label class="checklist-item" id="task-label-1">
+                                <input type="checkbox" class="task-checkbox" id="task-1">
+                                <span class="custom-checkbox"></span>
+                                <div class="task-text">
+                                    <span class="task-title">Semantic HTML5 Layout</span>
+                                    <span class="task-desc">Use correct semantic elements (header, main, section, nav, footer) with descriptive IDs.</span>
+                                </div>
+                            </label>
+
+                            <label class="checklist-item" id="task-label-2">
+                                <input type="checkbox" class="task-checkbox" id="task-2">
+                                <span class="custom-checkbox"></span>
+                                <div class="task-text">
+                                    <span class="task-title">Vibrant CSS Variables & HSL Colors</span>
+                                    <span class="task-desc">Design a customized dark/light mode palette using HSL color tokens.</span>
+                                </div>
+                            </label>
+
+                            <label class="checklist-item" id="task-label-3">
+                                <input type="checkbox" class="task-checkbox" id="task-3">
+                                <span class="custom-checkbox"></span>
+                                <div class="task-text">
+                                    <span class="task-title">Responsive Design & Layouts</span>
+                                    <span class="task-desc">Support fluid layouts across desktop, tablet, and mobile screens using Flexbox/Grid.</span>
+                                </div>
+                            </label>
+
+                            <label class="checklist-item" id="task-label-4">
+                                <input type="checkbox" class="task-checkbox" id="task-4">
+                                <span class="custom-checkbox"></span>
+                                <div class="task-text">
+                                    <span class="task-title">Interactivity & DOM Logic</span>
+                                    <span class="task-desc">Implement interactive controls (like progress trackers, form checks) using dynamic JS.</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        
+                        <div class="progress-bar-container">
+                            <div class="progress-info">
+                                <span>Task Completion</span>
+                                <span id="progressPercent">0%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="progressBarFill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="card glass-card guidelines-card">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-subtitle">Training Kit Brief</span>
+                            <h2 class="card-title">Qualification Criteria</h2>
+                        </div>
+                        <span class="card-icon-badge"><i class="fa-solid fa-shield-halved"></i></span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="guideline-list">
+                            <div class="guideline-item">
+                                <div class="guide-bullet bullet-red">
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h4 class="guide-title">Mandatory Foundation</h4>
+                                    <p class="guide-text">Project 1 is the essential start for every intern. You must establish standard HTML & CSS architecture patterns before proceeding.</p>
+                                </div>
+                            </div>
+
+                            <div class="guideline-item">
+                                <div class="guide-bullet bullet-violet">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h4 class="guide-title">Sprints Unlocking Rule</h4>
+                                    <p class="guide-text">Completion of Project 1 is strictly required to unlock Sprints and project datasets for next week.</p>
+                                </div>
+                            </div>
+
+                            <div class="guideline-item">
+                                <div class="guide-bullet bullet-cyan">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="guide-content">
+                                    <h4 class="guide-title">Quality Verification</h4>
+                                    <p class="guide-text">All projects must be thoroughly tested for mobile responsiveness, correct styling properties, and clean code semantics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-tag-cloud">
+                            <span class="skills-label">Required Skills:</span>
+                            <div class="tags">
+                                <span class="tag">HTML5 Semantics</span>
+                                <span class="tag">CSS3 HSL variables</span>
+                                <span class="tag">Responsive Media Queries</span>
+                                <span class="tag">Vanilla JS DOM Control</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            
+            <section class="sprint-roadmap-section" id="sprints">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fa-solid fa-route"></i> Internship Sprint Roadmap</h2>
+                    <p class="section-subtitle">Navigate through the training milestones. Achieve active sprints to progress further.</p>
+                </div>
+
+                <div class="roadmap-timeline">
+                    
+                    <div class="timeline-node active">
+                        <div class="node-indicator">
+                            <i class="fa-solid fa-circle-play pulse-animation"></i>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-header">
+                                <span class="node-tag">Sprint 1</span>
+                                <span class="node-status text-cyan">Active Sprint</span>
+                            </div>
+                            <h3 class="node-title">Static Webpage (Project 1)</h3>
+                            <p class="node-desc">Create highly aesthetic, semantic, and responsive portfolio portals using HTML and CSS variables.</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="timeline-node locked">
+                        <div class="node-indicator">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-header">
+                                <span class="node-tag">Sprint 2</span>
+                                <span class="node-status text-muted">Locked</span>
+                            </div>
+                            <h3 class="node-title">Dynamic Dashboards & API Integrations</h3>
+                            <p class="node-desc">Connect with cloud data services, implement live fetch functions, and create search/filter dashboards using advanced JS.</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="timeline-node locked">
+                        <div class="node-indicator">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-header">
+                                <span class="node-tag">Sprint 3</span>
+                                <span class="node-status text-muted">Locked</span>
+                            </div>
+                            <h3 class="node-title">Full-Stack Frameworks & Backends</h3>
+                            <p class="node-desc">Build web frameworks, structured backend databases, and configure fully functional secure server routers.</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="timeline-node locked">
+                        <div class="node-indicator">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-header">
+                                <span class="node-tag">Sprint 4</span>
+                                <span class="node-status text-muted">Locked</span>
+                            </div>
+                            <h3 class="node-title">Production & Deployment Optimization</h3>
+                            <p class="node-desc">Build system configurations, cache controllers, load balancer monitors, and launch products to dynamic hosting platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="card glass-card submission-card" id="submit">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <span class="card-subtitle">Project Deliverables</span>
+                        <h2 class="card-title">Sprint 1 Submission Panel</h2>
+                    </div>
+                    <span class="card-icon-badge color-cyan"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                </div>
+
+                <div class="card-body">
+                    <p class="submission-desc">Once you have successfully achieved a 100% completion status on your task checkboxes, enter your GitHub source repository link and live deployment URL below to start the verification process.</p>
+                    
+                    <form id="submissionForm" class="submission-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="repoLink" class="form-label"><i class="fa-brands fa-github"></i> GitHub Code Repository Link</label>
+                                <div class="input-wrapper">
+                                    <input type="url" id="repoLink" class="form-input" placeholder="https://github.com/username/project" required>
+                                    <i class="fa-solid fa-link input-icon"></i>
+                                </div>
+                                <span class="error-msg" id="repoError">Please enter a valid GitHub repository URL.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="liveLink" class="form-label"><i class="fa-solid fa-globe"></i> Live Deployment Link</label>
+                                <div class="input-wrapper">
+                                    <input type="url" id="liveLink" class="form-input" placeholder="https://project.netlify.app or vercel.app" required>
+                                    <i class="fa-solid fa-circle-play input-icon"></i>
+                                </div>
+                                <span class="error-msg" id="liveError">Please enter a valid deployment URL (e.g. Netlify, Vercel, GitHub Pages).</span>
+                            </div>
+                        </div>
+
+                        <div class="button-row">
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Submit S1 Deliverables</span>
+                                <span class="spinner"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    
+    <div class="modal-backdrop" id="successModal">
+        <div class="modal-content glass-card">
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="modal-title">Submission Successful!</h3>
+            <p class="modal-desc">Your Sprint 1 project deliverables have been successfully logged in the system. The verification board has unlocked Project 2 for review.</p>
+            <div class="modal-details">
+                <p><strong>GitHub Repo:</strong> <span id="modalRepoText">-</span></p>
+                <p><strong>Deployment:</strong> <span id="modalLiveText">-</span></p>
+            </div>
+            <button class="modal-close-btn" id="modalCloseBtn">Return to Dashboard</button>
+        </div>
+    </div>
+
+    
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 DecodeLabs. All rights reserved.</p>
+            <div class="footer-meta">
+                <span>Batch 2026 Industrial Training Kit</span>
+                <span class="separator">|</span>
+                <a href="#" class="footer-link">Support & Mentorship Channel</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="index.js"></script>
+</body>
+</html>
