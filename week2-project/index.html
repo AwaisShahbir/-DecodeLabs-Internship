@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DecodeLabs Developer Learning Portal. Master modern frontend layouts, APIs, and backend architectures through responsive interactive dashboards.">
+    <title>DecodeLabs | Developer Learning Portal & Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <div class="app-layout">
+        <header class="app-header">
+            <div class="header-left">
+                <button class="mobile-menu-trigger" popovertarget="sidebar-menu" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <a href="#" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <span class="logo-text">Decode<span class="highlight">Labs</span></span>
+                </a>
+            </div>
+
+            <div class="header-center">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search tracks, topics or docs..." aria-label="Search dashboard">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle theme mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="notification-badge-wrapper">
+                    <button class="icon-btn" aria-label="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    <span class="notification-indicator"></span>
+                </div>
+                
+                <div class="user-badge" id="profileBadge">
+                    <div class="avatar">
+                        <span class="avatar-text">AS</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <aside id="sidebar-menu" popover="auto" class="app-sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon-sidebar">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <span class="logo-text-sidebar">Decode<span class="highlight">Labs</span></span>
+                <button class="close-popover-btn" popovertarget="sidebar-menu" popovertargetaction="hide" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                <a href="#tracks" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> <span>Learning Tracks</span></a>
+                <a href="#webinars" class="nav-item"><i class="fa-solid fa-video"></i> <span>Live Webinars</span></a>
+                <a href="#playground" class="nav-item"><i class="fa-solid fa-code"></i> <span>Playground</span></a>
+                <a href="#settings" class="nav-item"><i class="fa-solid fa-sliders"></i> <span>Settings</span></a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-card">
+                    <div class="profile-avatar">
+                        <span class="profile-avatar-text">IN</span>
+                    </div>
+                    <div class="profile-details">
+                        <h4 class="profile-name">Awais Shahbir</h4>
+                        <span class="profile-role">Frontend Intern</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="app-main">
+            <section class="dashboard-hero">
+                <div class="hero-content">
+                    <div class="badge-row">
+                        <span class="glowing-badge"><i class="fa-solid fa-bolt"></i> Level 2: Fluid Architect</span>
+                        <span class="cohort-badge">Batch 2026 Cohort</span>
+                    </div>
+                    <h1 class="hero-title">The Art of <span class="gradient-text">Fluidity</span></h1>
+                    <p class="hero-subtitle">Design interfaces that flow like water. Master the synergy of CSS Grid for macro layouts and Flexbox for micro components.</p>
+                </div>
+            </section>
+
+            <section class="stats-grid">
+                <div class="stat-card card-glow-cyan">
+                    <div class="stat-icon-wrapper cyan-accent">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Current Progress</span>
+                        <h3 class="stat-value">Sprint 2</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card card-glow-purple">
+                    <div class="stat-icon-wrapper purple-accent">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Completion Rate</span>
+                        <h3 class="stat-value">62.7%</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card card-glow-pink">
+                    <div class="stat-icon-wrapper pink-accent">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Badges Earned</span>
+                        <h3 class="stat-value">3 / 5</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card card-glow-orange">
+                    <div class="stat-icon-wrapper orange-accent">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Mentorship Hours</span>
+                        <h3 class="stat-value">18.5 hrs</h3>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-dashboard-grid">
+                <section class="main-content-section" id="tracks">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Active Learning Tracks</h2>
+                        <p class="section-subtitle">Complete these interactive tracks to level up your engineering skills.</p>
+                    </div>
+
+                    <div class="tracks-card-container">
+                        <article class="course-card">
+                            <div class="card-image-wrapper">
+                                <img src="assets/course-frontend.png" alt="Frontend Architecture Course Cover" class="card-image" loading="lazy">
+                                <span class="card-badge badge-active">In Progress</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="card-tag">HTML & CSS</span>
+                                    <span class="card-duration"><i class="fa-regular fa-clock"></i> 8 hours</span>
+                                </div>
+                                <h3 class="card-title">Frontend Architecture</h3>
+                                <p class="card-description">Master CSS Grid layouts, Flexbox structures, media queries, and modern fluid typography with CSS clamp.</p>
+                                
+                                <div class="card-progress-section">
+                                    <div class="progress-labels">
+                                        <span>Progress</span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                </div>
+
+                                <button class="card-btn btn-primary" aria-label="Resume Frontend Architecture track">
+                                    <span>Resume Track</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="course-card">
+                            <div class="card-image-wrapper">
+                                <img src="assets/course-apis.png" alt="Dynamic UI & APIs Course Cover" class="card-image" loading="lazy">
+                                <span class="card-badge badge-active">In Progress</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="card-tag">JavaScript & Web APIs</span>
+                                    <span class="card-duration"><i class="fa-regular fa-clock"></i> 12 hours</span>
+                                </div>
+                                <h3 class="card-title">Dynamic UI & APIs</h3>
+                                <p class="card-description">Learn to fetch APIs, manipulate DOM structures, handle web storage, and build responsive asynchronous interfaces.</p>
+                                
+                                <div class="card-progress-section">
+                                    <div class="progress-labels">
+                                        <span>Progress</span>
+                                        <span>40%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                </div>
+
+                                <button class="card-btn btn-primary" aria-label="Resume Dynamic UI & APIs track">
+                                    <span>Resume Track</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="course-card">
+                            <div class="card-image-wrapper">
+                                <img src="assets/course-backend.png" alt="Full-Stack Systems Course Cover" class="card-image" loading="lazy">
+                                <span class="card-badge badge-locked"><i class="fa-solid fa-lock"></i> Locked</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="card-tag">NodeJS & Cloud DB</span>
+                                    <span class="card-duration"><i class="fa-regular fa-clock"></i> 15 hours</span>
+                                </div>
+                                <h3 class="card-title">Full-Stack Systems</h3>
+                                <p class="card-description">Configure database routers, cache nodes, authentication protocols, and launch full-stack APIs to edge servers.</p>
+                                
+                                <div class="card-progress-section">
+                                    <div class="progress-labels">
+                                        <span>Progress</span>
+                                        <span>0%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <button class="card-btn btn-secondary" disabled aria-label="Full-Stack Systems track is locked">
+                                    <span>Track Locked</span>
+                                    <i class="fa-solid fa-lock"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="side-content-panel" id="webinars">
+                    <div class="panel-card glass-panel">
+                        <h3 class="panel-title"><i class="fa-solid fa-circle-play text-accent"></i> Live Sessions</h3>
+                        <p class="panel-subtitle">Connect with industry mentors in real time.</p>
+                        
+                        <div class="webinar-list">
+                            <div class="webinar-item">
+                                <div class="webinar-time">
+                                    <span class="date">Jun 08</span>
+                                    <span class="time">18:00</span>
+                                </div>
+                                <div class="webinar-details">
+                                    <h4 class="webinar-title">Flexbox vs Grid Decoded</h4>
+                                    <span class="mentor">by Awais Shahbir (Tech Lead)</span>
+                                    <button class="join-btn" aria-label="Join Webinar: Flexbox vs Grid Decoded">Register</button>
+                                </div>
+                            </div>
+
+                            <div class="webinar-item">
+                                <div class="webinar-time">
+                                    <span class="date">Jun 12</span>
+                                    <span class="time">15:00</span>
+                                </div>
+                                <div class="webinar-details">
+                                    <h4 class="webinar-title">Web Performance & SEO</h4>
+                                    <span class="mentor">by DecodeLabs Mentors</span>
+                                    <button class="join-btn" aria-label="Join Webinar: Web Performance & SEO">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-card glass-panel resources-panel">
+                        <h3 class="panel-title"><i class="fa-solid fa-folder-open text-cyan"></i> Quick Docs</h3>
+                        <div class="doc-links">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank" rel="noopener" class="doc-link">
+                                <i class="fa-brands fa-markdown text-purple"></i> CSS Grid Complete Manual
+                            </a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag" target="_blank" rel="noopener" class="doc-link">
+                                <i class="fa-brands fa-html5 text-orange"></i> Viewport Meta Tag Configurations
+                            </a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank" rel="noopener" class="doc-link">
+                                <i class="fa-solid fa-file-code text-cyan"></i> Native HTML Popover API Docs
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="footer-container">
+                <p class="footer-copy">&copy; 2026 DecodeLabs. All rights reserved.</p>
+                <div class="footer-meta">
+                    <span class="badge-online"><span class="pulse-indicator"></span> Realtime Sync Active</span>
+                    <span class="separator">|</span>
+                    <a href="#" class="footer-link">Mentorship Portal</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
