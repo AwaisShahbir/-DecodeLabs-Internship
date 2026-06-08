@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DecodeLabs Developer Learning Portal. Master modern frontend layouts, APIs, and client-side logic through responsive interactive dashboards and custom sandboxes.">
+    <title>DecodeLabs | Interactive Developer Portal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Ambient glowing backdrops -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <div class="app-layout">
+        <!-- HEADER UNIT -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="mobile-menu-trigger js-sidebar-trigger" popovertarget="sidebar-menu" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <a href="#" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <span class="logo-text">Decode<span class="highlight">Labs</span></span>
+                </a>
+            </div>
+
+            <div class="header-center">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="js-track-search" placeholder="Search tracks, topics or playground..." aria-label="Search dashboard">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="icon-btn theme-toggle js-theme-toggle" id="themeToggle" aria-label="Toggle theme mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <div class="notification-badge-wrapper">
+                    <button class="icon-btn js-notification-trigger" id="notificationBtn" aria-label="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    <span class="notification-indicator js-notification-indicator"></span>
+                    
+                    <!-- Notifications Dropdown -->
+                    <div class="notifications-dropdown js-notifications-dropdown" id="notificationsDropdown">
+                        <div class="dropdown-header">
+                            <h4>Notifications</h4>
+                            <button class="js-mark-read-btn">Mark all as read</button>
+                        </div>
+                        <div class="dropdown-list js-notifications-list">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="user-badge js-profile-badge" id="profileBadge">
+                    <div class="avatar">
+                        <span class="avatar-text">AS</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- POPOVER SIDEBAR NAV -->
+        <aside id="sidebar-menu" popover="auto" class="app-sidebar js-app-sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon-sidebar">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <span class="logo-text-sidebar">Decode<span class="highlight">Labs</span></span>
+                <button class="close-popover-btn" popovertarget="sidebar-menu" popovertargetaction="hide" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active js-nav-item"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                <a href="#tracks-section" class="nav-item js-nav-item"><i class="fa-solid fa-graduation-cap"></i> <span>Learning Tracks</span></a>
+                <a href="#sandbox-section" class="nav-item js-nav-item"><i class="fa-solid fa-code"></i> <span>Playground</span></a>
+                <a href="#webinars-section" class="nav-item js-nav-item"><i class="fa-solid fa-video"></i> <span>Live Webinars</span></a>
+                <a href="#achievements-section" class="nav-item js-nav-item"><i class="fa-solid fa-award"></i> <span>Achievements</span></a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-card">
+                    <div class="profile-avatar">
+                        <span class="profile-avatar-text">IN</span>
+                    </div>
+                    <div class="profile-details">
+                        <h4 class="profile-name">Awais Shahbir</h4>
+                        <span class="profile-role">Frontend Intern</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN SECTION -->
+        <main class="app-main">
+            <!-- HERO BANNER -->
+            <section class="dashboard-hero" id="dashboard">
+                <div class="hero-content">
+                    <div class="badge-row">
+                        <span class="glowing-badge"><i class="fa-solid fa-bolt"></i> Level 3: Script Sorcerer</span>
+                        <span class="cohort-badge">Batch 2026 Cohort</span>
+                    </div>
+                    <h1 class="hero-title">Engineering the <span class="gradient-text">Nervous System</span></h1>
+                    <p class="hero-subtitle">Make your layouts respond to user behavior. Construct dynamic interaction loops with event handling, state mutations, and decoupled client-side logic.</p>
+                </div>
+            </section>
+
+            <!-- STATS ROW -->
+            <section class="stats-grid">
+                <div class="stat-card card-glow-cyan">
+                    <div class="stat-icon-wrapper cyan-accent">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Current Progress</span>
+                        <h3 class="stat-value js-progress-sprint">Sprint 3</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card card-glow-purple">
+                    <div class="stat-icon-wrapper purple-accent">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Completion</span>
+                        <h3 class="stat-value js-total-completion-label">0%</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card card-glow-pink">
+                    <div class="stat-icon-wrapper pink-accent">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Badges Unlocked</span>
+                        <h3 class="stat-value js-badges-earned-label">2 / 5</h3>
+                    </div>
+                </div>
+
+                <div class="stat-card card-glow-orange">
+                    <div class="stat-icon-wrapper orange-accent">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Webinar Countdown</span>
+                        <h3 class="stat-value js-webinar-countdown-short">00:00:00</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DASHBOARD GRID -->
+            <div class="content-dashboard-grid">
+                
+                <!-- CONTENT BLOCK A: ACTIVE LEARNING TRACKS -->
+                <section class="main-content-section" id="tracks-section">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Active Learning Tracks</h2>
+                        <p class="section-subtitle">Complete these interactive tracks to master client-side web development.</p>
+                    </div>
+
+                    <!-- Category Filters & Search -->
+                    <div class="filter-controls">
+                        <div class="filter-tabs">
+                            <button class="filter-btn is-active js-filter-tab" data-filter="all">All Tracks</button>
+                            <button class="filter-btn js-filter-tab" data-filter="in-progress">In Progress</button>
+                            <button class="filter-btn js-filter-tab" data-filter="completed">Completed</button>
+                            <button class="filter-btn js-filter-tab" data-filter="locked">Locked</button>
+                        </div>
+                    </div>
+
+                    <div class="tracks-card-container js-tracks-container">
+                        <!-- Card 1: Frontend Architecture -->
+                        <article class="course-card js-track-card" data-track-id="frontend" data-status="in-progress">
+                            <div class="card-image-wrapper">
+                                <img src="assets/course-frontend.png" alt="Frontend Architecture Course Cover" class="card-image" loading="lazy">
+                                <span class="card-badge badge-active js-card-badge">In Progress</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="card-tag">HTML & CSS</span>
+                                    <span class="card-duration"><i class="fa-regular fa-clock"></i> 8 hours</span>
+                                </div>
+                                <h3 class="card-title">Frontend Architecture</h3>
+                                <p class="card-description">Master CSS Grid layouts, Flexbox structures, media queries, and modern fluid typography with CSS clamp.</p>
+                                
+                                <div class="card-progress-section">
+                                    <div class="progress-labels">
+                                        <span>Track Progress</span>
+                                        <span class="js-progress-percent">75%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill js-progress-fill" style="width: 75%"></div>
+                                    </div>
+                                </div>
+
+                                <button class="card-btn btn-primary js-resume-btn" aria-label="Resume Frontend Architecture track">
+                                    <span>Resume Track</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Card 2: Dynamic UI & APIs -->
+                        <article class="course-card js-track-card" data-track-id="javascript" data-status="in-progress">
+                            <div class="card-image-wrapper">
+                                <img src="assets/course-apis.png" alt="Dynamic UI & APIs Course Cover" class="card-image" loading="lazy">
+                                <span class="card-badge badge-active js-card-badge">In Progress</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="card-tag">JavaScript & Web APIs</span>
+                                    <span class="card-duration"><i class="fa-regular fa-clock"></i> 12 hours</span>
+                                </div>
+                                <h3 class="card-title">Dynamic UI & APIs</h3>
+                                <p class="card-description">Learn to fetch APIs, manipulate DOM structures, handle web storage, and build responsive asynchronous interfaces.</p>
+                                
+                                <div class="card-progress-section">
+                                    <div class="progress-labels">
+                                        <span>Track Progress</span>
+                                        <span class="js-progress-percent">40%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill js-progress-fill" style="width: 40%"></div>
+                                    </div>
+                                </div>
+
+                                <button class="card-btn btn-primary js-resume-btn" aria-label="Resume Dynamic UI & APIs track">
+                                    <span>Resume Track</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Card 3: Full-Stack Systems -->
+                        <article class="course-card js-track-card is-locked" data-track-id="backend" data-status="locked">
+                            <div class="card-image-wrapper">
+                                <img src="assets/course-backend.png" alt="Full-Stack Systems Course Cover" class="card-image" loading="lazy">
+                                <span class="card-badge badge-locked js-card-badge"><i class="fa-solid fa-lock"></i> Locked</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="card-tag">NodeJS & Cloud DB</span>
+                                    <span class="card-duration"><i class="fa-regular fa-clock"></i> 15 hours</span>
+                                </div>
+                                <h3 class="card-title">Full-Stack Systems</h3>
+                                <p class="card-description">Configure database routers, cache nodes, authentication protocols, and launch full-stack APIs to edge servers.</p>
+                                
+                                <div class="card-progress-section">
+                                    <div class="progress-labels">
+                                        <span>Track Progress</span>
+                                        <span class="js-progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill js-progress-fill" style="width: 0%"></div>
+                                    </div>
+                                </div>
+
+                                <button class="card-btn btn-secondary js-resume-btn" disabled aria-label="Full-Stack Systems track is locked">
+                                    <span>Track Locked</span>
+                                    <i class="fa-solid fa-lock"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- INTERACTIVE CHECKLIST DRAWER (COMPONENTS DYNAMICALLY RENDERED) -->
+                    <div class="checklist-drawer js-checklist-drawer" id="checklistDrawer">
+                        <div class="drawer-header">
+                            <div class="drawer-title-group">
+                                <span class="drawer-badge js-drawer-badge">Active Track</span>
+                                <h3 class="drawer-title js-drawer-title">Frontend Architecture Checklist</h3>
+                            </div>
+                            <button class="close-drawer-btn js-close-drawer" aria-label="Close Checklist Drawer">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="drawer-body">
+                            <p class="drawer-instructions">Check off tasks to dynamically update your progress rate. Completing all tasks will mark the track as Completed.</p>
+                            <div class="checklist-items js-checklist-items-container">
+                                <!-- Injected dynamically by Javascript -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SIDE CONTENT MODULE: WEBINARS, QUICK DOCS -->
+                <section class="side-content-panel">
+                    
+                    <!-- WEBINARS PANEL -->
+                    <div class="panel-card glass-panel" id="webinars-section">
+                        <h3 class="panel-title"><i class="fa-solid fa-circle-play text-accent"></i> Live Sessions</h3>
+                        <p class="panel-subtitle">Register and connect with mentors in real time.</p>
+                        
+                        <div class="countdown-clock js-countdown-clock">
+                            <div class="countdown-unit">
+                                <span class="countdown-num js-countdown-hours">00</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-unit">
+                                <span class="countdown-num js-countdown-minutes">00</span>
+                                <span class="countdown-label">Min</span>
+                            </div>
+                            <div class="countdown-unit">
+                                <span class="countdown-num js-countdown-seconds">00</span>
+                                <span class="countdown-label">Sec</span>
+                            </div>
+                        </div>
+
+                        <div class="webinar-list">
+                            <div class="webinar-item js-webinar-item" data-id="1">
+                                <div class="webinar-time">
+                                    <span class="date">Jun 08</span>
+                                    <span class="time">18:00</span>
+                                </div>
+                                <div class="webinar-details">
+                                    <h4 class="webinar-title">Flexbox vs Grid Decoded</h4>
+                                    <span class="mentor">by Awais Shahbir (Tech Lead)</span>
+                                    <button class="join-btn js-webinar-btn" aria-label="Register for Flexbox vs Grid Decoded Webinar">Register</button>
+                                </div>
+                            </div>
+
+                            <div class="webinar-item js-webinar-item" data-id="2">
+                                <div class="webinar-time">
+                                    <span class="date">Jun 12</span>
+                                    <span class="time">15:00</span>
+                                </div>
+                                <div class="webinar-details">
+                                    <h4 class="webinar-title">Web Performance & SEO</h4>
+                                    <span class="mentor">by DecodeLabs Mentors</span>
+                                    <button class="join-btn js-webinar-btn" aria-label="Register for Web Performance Webinar">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACHIEVEMENTS PANEL -->
+                    <div class="panel-card glass-panel" id="achievements-section">
+                        <h3 class="panel-title"><i class="fa-solid fa-award text-cyan"></i> Sprint Badges</h3>
+                        <p class="panel-subtitle">Earn badges as you master tracks and submit sprint tasks.</p>
+                        <div class="badge-grid js-badge-grid">
+                            <!-- Badge 1 -->
+                            <div class="achievement-badge js-badge-item" data-badge="flexbox" data-unlocked="true">
+                                <div class="badge-icon-wrapper">
+                                    <i class="fa-solid fa-table-cells-large"></i>
+                                </div>
+                                <span class="badge-label">Flexbox Expert</span>
+                            </div>
+                            <!-- Badge 2 -->
+                            <div class="achievement-badge js-badge-item" data-badge="grid" data-unlocked="true">
+                                <div class="badge-icon-wrapper">
+                                    <i class="fa-solid fa-table-cells"></i>
+                                </div>
+                                <span class="badge-label">Grid Architect</span>
+                            </div>
+                            <!-- Badge 3 -->
+                            <div class="achievement-badge is-locked js-badge-item" data-badge="dom" data-unlocked="false">
+                                <div class="badge-icon-wrapper">
+                                    <i class="fa-solid fa-magic"></i>
+                                </div>
+                                <span class="badge-label">DOM Wizard</span>
+                            </div>
+                            <!-- Badge 4 -->
+                            <div class="achievement-badge is-locked js-badge-item" data-badge="api" data-unlocked="false">
+                                <div class="badge-icon-wrapper">
+                                    <i class="fa-solid fa-flask"></i>
+                                </div>
+                                <span class="badge-label">API Alchemist</span>
+                            </div>
+                            <!-- Badge 5 -->
+                            <div class="achievement-badge is-locked js-badge-item" data-badge="fullstack" data-unlocked="false">
+                                <div class="badge-icon-wrapper">
+                                    <i class="fa-solid fa-circle-nodes"></i>
+                                </div>
+                                <span class="badge-label">Full-Stack Titan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QUICK DOCS PANEL -->
+                    <div class="panel-card glass-panel resources-panel">
+                        <h3 class="panel-title"><i class="fa-solid fa-folder-open text-cyan"></i> Quick Docs</h3>
+                        <div class="doc-links">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank" rel="noopener" class="doc-link">
+                                <i class="fa-brands fa-markdown text-purple"></i> CSS Grid Complete Manual
+                            </a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener" class="doc-link">
+                                <i class="fa-solid fa-network-wired text-cyan"></i> Introduction to the DOM
+                            </a>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener" class="doc-link">
+                                <i class="fa-solid fa-file-code text-orange"></i> Event Listeners Deep Dive
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENT BLOCK B: INTERACTIVE DEVELOPER PLAYGROUND -->
+                <section class="main-content-section playground-card" id="sandbox-section">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Developer Playground Sandbox</h2>
+                        <p class="section-subtitle">Experiment with interactive code directly in your browser. Choose a template or write your own markup and scripts.</p>
+                    </div>
+
+                    <div class="sandbox-wrapper">
+                        <!-- Code Inputs panel -->
+                        <div class="sandbox-editors-panel">
+                            <div class="sandbox-panel-controls">
+                                <div class="select-wrapper">
+                                    <select class="sandbox-preset-select js-sandbox-select" aria-label="Load Sandbox template presets">
+                                        <option value="default">-- Choose a Template Preset --</option>
+                                        <option value="alert-box">Interactive Alert Box</option>
+                                        <option value="theme-toggle">Micro Theme Customizer</option>
+                                        <option value="task-list">Interactive To-Do List</option>
+                                    </select>
+                                </div>
+                                <button class="sandbox-run-btn js-sandbox-run" aria-label="Run Code in Sandbox iframe">
+                                    <i class="fa-solid fa-play"></i> Run Code
+                                </button>
+                            </div>
+
+                            <div class="editor-tabs-container">
+                                <button class="editor-tab-btn is-active js-editor-tab" data-tab="html">HTML</button>
+                                <button class="editor-tab-btn js-editor-tab" data-tab="css">CSS</button>
+                                <button class="editor-tab-btn js-editor-tab" data-tab="js">JavaScript</button>
+                            </div>
+
+                            <div class="editors-container">
+                                <div class="editor-wrapper js-editor-wrapper is-active" id="editor-html">
+                                    <textarea class="editor-textarea js-sandbox-html" spellcheck="false" placeholder="&lt;!-- Write your HTML structure here --&gt;"></textarea>
+                                </div>
+                                <div class="editor-wrapper js-editor-wrapper" id="editor-css">
+                                    <textarea class="editor-textarea js-sandbox-css" spellcheck="false" placeholder="/* Write your CSS styling here */"></textarea>
+                                </div>
+                                <div class="editor-wrapper js-editor-wrapper" id="editor-js">
+                                    <textarea class="editor-textarea js-sandbox-js" spellcheck="false" placeholder="// Write your JavaScript logic here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Iframe Output preview panel -->
+                        <div class="sandbox-preview-panel">
+                            <div class="preview-header">
+                                <span class="preview-indicator"><span class="pulse-indicator"></span> Sandbox Output</span>
+                                <button class="preview-reset-btn js-sandbox-reset" aria-label="Reset Sandbox Editors"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                            </div>
+                            <div class="iframe-container">
+                                <iframe class="sandbox-iframe js-sandbox-iframe" sandbox="allow-scripts" title="Sandbox Code Render Window"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SUBMISSION PANEL -->
+                <section class="main-content-section submission-section">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fa-solid fa-cloud-arrow-up"></i> Sprint 3 Submission Panel</h2>
+                        <p class="section-subtitle">Submit your interactive project files for review. Make sure to complete at least 2 tracks (Frontend Architecture and Dynamic UI) to unlock submission.</p>
+                    </div>
+
+                    <form class="submission-form js-submit-form" id="submissionForm">
+                        <div class="form-grid">
+                            <div class="form-group js-form-group">
+                                <label for="repoLink">GitHub Repository URL</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-brands fa-github input-icon"></i>
+                                    <input type="url" id="repoLink" class="js-repo-input" placeholder="https://github.com/yourusername/project-repo" required>
+                                </div>
+                                <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid GitHub repository URL.</span>
+                            </div>
+
+                            <div class="form-group js-form-group">
+                                <label for="liveLink">Live Deployment URL</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-globe input-icon"></i>
+                                    <input type="url" id="liveLink" class="js-live-input" placeholder="https://your-project.vercel.app" required>
+                                </div>
+                                <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid URL.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <div class="requirement-indicator js-requirement-indicator">
+                                <i class="fa-solid fa-circle-exclamation text-warning"></i> 
+                                <span>Require: Complete active tracks to 100% first.</span>
+                            </div>
+                            <button type="submit" class="submit-btn js-submit-btn" id="submitBtn">
+                                <span class="btn-text">Submit Deliverables</span>
+                                <span class="btn-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- FOOTER SECTION -->
+        <footer class="app-footer">
+            <div class="footer-container">
+                <p class="footer-copy">&copy; 2026 DecodeLabs. All rights reserved.</p>
+                <div class="footer-meta">
+                    <span class="badge-online"><span class="pulse-indicator"></span> Client-Side Interactive System Active</span>
+                    <span class="separator">|</span>
+                    <a href="#" class="footer-link">Mentorship Portal</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- BADGE DETAIL MODAL -->
+    <div class="modal-backdrop js-badge-modal" id="badgeModal">
+        <div class="modal-card">
+            <button class="modal-close-btn js-close-modal-btn" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-badge-wrapper js-modal-badge-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3 class="modal-title js-modal-badge-title">Badge Title</h3>
+                <span class="modal-subtitle js-modal-badge-status">Unlocked</span>
+            </div>
+            <div class="modal-body">
+                <p class="js-modal-badge-description">Description of how this badge was unlocked and what skills it validates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal-backdrop js-success-modal" id="successModal">
+        <div class="modal-card success-card">
+            <div class="success-icon-globe">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 class="modal-title">Sprint 3 Completed!</h2>
+            <p class="modal-subtitle">Your deliverables have been successfully submitted for code verification and badge issuing.</p>
+            
+            <div class="submitted-links-box">
+                <div class="link-item">
+                    <span class="link-label">Repository:</span>
+                    <a href="#" class="link-anchor js-modal-repo-link" target="_blank" rel="noopener">https://github.com/example/repo</a>
+                </div>
+                <div class="link-item">
+                    <span class="link-label">Deployment:</span>
+                    <a href="#" class="link-anchor js-modal-live-link" target="_blank" rel="noopener">https://example.vercel.app</a>
+                </div>
+            </div>
+
+            <div class="unlocked-announcement">
+                <i class="fa-solid fa-lock-open text-cyan"></i>
+                <span><strong>Sprint 4 unlocked!</strong> You can now proceed to full-stack database integrations.</span>
+            </div>
+
+            <button class="modal-close-btn-primary js-close-success-btn">Return to Dashboard</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
